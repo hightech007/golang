@@ -26,7 +26,7 @@ fork/exec /tmp/go-build173576991/command-line-arguments/_obj/exe/hello: permissi
 ```
 
 issue: /tmp is mounted in nonexec mode  
-solution: remount /tmp or use go build
+solution: remount /tmp 
 ```
-go build hello.go
+sudo mount -o remount exec /tmp
 ```
