@@ -29,4 +29,8 @@ issue: /tmp is mounted in nonexec mode
 solution: remount /tmp 
 ```
 sudo mount -o remount exec /tmp
+
 ```
+## Book & Reference  
+
+Learning Go (free ebook): https://github.com/miekg/gobook
