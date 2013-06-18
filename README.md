@@ -5,8 +5,21 @@ Learning Go
 OS: Ubuntu 12.04, 32bit VM
 
 ## Installation
-https://wiki.ubuntu.com/Go  
-go-tip package
+https://wiki.ubuntu.com/Go 
+ (may not have the latest release) 
+
+### install from golang.org
+
+download package http://code.google.com/p/go/downloads/list
+
+guide: http://golang.org/doc/install
+
+```
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+```
 
 ### Run Hello World
 
@@ -29,7 +42,6 @@ issue: /tmp is mounted in nonexec mode
 solution: remount /tmp 
 ```
 sudo mount -o remount exec /tmp
-
 ```
 ## Book & Reference  
 
