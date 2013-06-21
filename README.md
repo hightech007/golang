@@ -47,3 +47,7 @@ sudo mount -o remount exec /tmp
 
 Learning Go (free ebook): https://github.com/miekg/gobook  
 Go Web 编程 （free ebook): https://github.com/astaxie/build-web-application-with-golang
+
+## Samples:
+
+Pi Search: https://github.com/dave-andersen/pisearch 
