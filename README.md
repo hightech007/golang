@@ -18,7 +18,7 @@ guide: http://golang.org/doc/install
 export PATH=$PATH:/usr/local/go/bin
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
 ```
 
 ### Run Hello World
