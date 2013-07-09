@@ -10,6 +10,8 @@ import (
 	"net/http"
 	"io/ioutil"
 	"log"
+	"code.google.com/p/go.net/html"
+	"strings"
 )
 
 
@@ -23,8 +25,30 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%s", robots)
+	
+	//fmt.Printf("%s", robots)
 	
 	//parse html
-	//extract url for ann and kml
+	//extract kml
+	doc, err := html.Parse(strings.NewReader(string(robots)))
+	if err != nil {
+	    log.Fatal(err)
+	}
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+	    if n.Type == html.ElementNode && n.Data == "a" {
+	        for _, a := range n.Attr {
+	            if a.Key == "href" {
+	                if strings.Contains(a.Val,".kml") {
+	                    fmt.Println(a.Val)
+	                    break
+	                }
+	            }
+	        }
+	    }
+	    for c := n.FirstChild; c!=nil; c= c.NextSibling{
+	        f(c)
+	    }
+	}
+	f(doc)
 }
